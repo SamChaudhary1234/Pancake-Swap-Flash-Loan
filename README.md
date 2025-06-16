@@ -1,52 +1,84 @@
-## EXACT CODE
+# 🧠 BSC Flashloan Bot
 
-If you are following the exact code from the repo, you can get the code with exactly what is shown in that repo here:
+A flashloan implementation for Binance Smart Chain (BSC). This repo simulates and deploys a contract that performs token swaps using flashloans.
 
-https://github.com/salin1771/bsc_flashloan.git
+---
 
-## Step 1
+## 📦 Clone the Repository
 
-Make sure node, ts-node and yarn are installed globally on your machine and download the githum package in whatever folder you like.
+```bash
+git clone https://github.com/salin1771/bsc_flashloan.git
+cd bsc_flashloan
+⚙️ Prerequisites
+Ensure the following are installed globally on your machine:
 
-## Step 2 - Add .env
+Node.js
 
-```shell
+yarn
+
+ts-node
+
+🛠️ Step 1: Environment Configuration
+Create an .env file in the root directory:
+
+bash
+Copy
+Edit
 touch .env
-```
+Add the following content:
 
-Edit the .env file
-
-```plaintext ./env
+env
+Copy
+Edit
 MAINNET_PROVIDER_URL=https://bsc-dataseed.binance.org
 TESTNET_PROVIDER_URL=https://data-seed-prebsc-1-s1.binance.org:8545
-PRIVATE_KEY=ENTER_YOUR_PRIVATE_KEY_PREFIXED_WITH_0x
-```
+PRIVATE_KEY=YOUR_PRIVATE_KEY_HERE_STARTING_WITH_0x
+⚠️ Warning: Never commit your .env file or share your private key publicly.
 
-## Step 3 - Install Exact Packages and Compile
+📦 Step 2: Install Dependencies
+Install exact packages defined in the repo:
 
-```shell
-yarn --exact
+bash
+Copy
+Edit
+yarn install --frozen-lockfile
+Then compile the project:
+
+bash
+Copy
+Edit
 npx hardhat compile
-```
+🧪 Step 3: Run Tests
+Execute the test suite:
 
-## Step 4 - Test
-
-```shell
+bash
+Copy
+Edit
 npx hardhat test
-```
+✅ You should see successful swaps with green checkmarks.
 
-You should now see a bunch of swaps and a green tick showing success.
+🚀 Step 4: Deploy Contracts
+✅ Deploy Flashloan Contract to Mainnet
+⚠️ Warning: This will consume real BNB gas. Be cautious.
 
-## Step 5 - Deploy
-
-In order to deploy to mainnet (WARNING: WILL COST GAS):
-
-```shell
+bash
+Copy
+Edit
 npx hardhat run scripts/deployFlash.ts --network mainnet
-```
+🔁 Deploy Simulation Contract
+This contract simulates usage and logs gas costs:
 
-Or if you are deploying the simulation contract (this is useful for calling the previously deployed contract) to see gas used:
-
-```shell
+bash
+Copy
+Edit
 npx hardhat run scripts/deploySim.ts --network mainnet
-```
+📘 Notes
+Always test on testnet before deploying to mainnet.
+
+Use a secure wallet and consider hardware wallets for private key management.
+
+This repo is meant for educational and research purposes. Use responsibly.
+
+
+
+Let me know if you want me to add **shields (badges)**, a **license section**, or **GIF examples** of test output or deployment results.
